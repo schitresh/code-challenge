@@ -32,6 +32,15 @@ class CompaniesController < ApplicationController
     end
   end  
 
+  def destroy
+    if @company.destroy
+      flash[:notice] = "Company #{@company.name} deleted"
+    else
+      flash[:notice] = "Could not delete the company #{@company.name}"
+    end
+    redirect_to companies_path
+  end
+
   private
 
   def company_params

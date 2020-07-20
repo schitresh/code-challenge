@@ -1,14 +1,21 @@
 <div class="container py-5">
   <h3>Companies</h3>
   <%= link_to "+ Create a Company", new_company_path %><br>
+  <a href="#" id="delete-enabler">Delete Companies</a>
+
   <% if @companies.empty? %>
   <p>No Companies Found</p>
   <% else %>
     <ul class="list-group my-5">
       <% @companies.each do |company| %>
-        <a href="<%= company_path(company) %>" class="list-group-item list-group-item-action">
-          <%= company.name %>
-        </a>
+        <div class="list-group-item list-group-item-action">
+          <%= link_to  company.name, company_path(company) %>
+          <div class="deletor hidden">
+            <%= link_to  company_path(company), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger btn-sm" do %>
+              &#10008; Delete
+            <% end %>
+          </div>
+        </div>
       <% end %>
     </ul>
   <% end %>

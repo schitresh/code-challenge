@@ -1,2 +1,10 @@
 @import "trix/dist/trix";
 @import "~bootstrap/scss/bootstrap.scss";
+
+.hidden{
+    visibility: hidden;
+}
+
+.deletor{
+    float: right;
+}

@@ -2,4 +2,8 @@
   <h3>Edit Company</h3>
   <%= link_to "< Company", company_path(@company) %>
   <%= render "form" %>
+  <hr>
+  <div class="d-flex justify-content-center mb-3">
+    <%= link_to  "Delete Company", company_path(@company), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+  </div>
 </div>

@@ -10,6 +10,8 @@ require("channels");
 
 require("trix");
 require("@rails/actiontext");
+require("packs/custom");
+require("jquery")
 
 import "bootstrap";
 import "css/site";
